@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+
+		<Version>0.1.0</Version>
+		<Authors>Pasha</Authors>
+		<Company>SUS Digital Productions</Company>
+		<Product>Abstraction Interfaces</Product>
+		<PackageTags>SUS;Abstraction;Interfaces</PackageTags>
+		<Description>Open Source Abstraction Interfaces Package brought to you by SUS Digital Productions.</Description>
+
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
+		<RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<ProjectReference Include="..\SUS.Pagination.Base\SUS.Pagination.Base.csproj" />
+	</ItemGroup>
+
+</Project>

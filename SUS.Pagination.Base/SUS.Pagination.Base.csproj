@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Version>0.1.0</Version>
+		<Authors>Pasha</Authors>
+		<Company>SUS Digital Productions</Company>
+		<Product>Pagination classes</Product>
+		<PackageTags>SUS;Pagination;Base</PackageTags>
+		<Nullable>enable</Nullable>
+		<Description>Open Source Base Pagination classes Package brought to you by SUS Digital Productions.</Description>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+		<RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
+	</PropertyGroup>
+
+</Project>
