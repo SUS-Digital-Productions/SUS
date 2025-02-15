@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace SUS.Core.Abstractions.Interfaces
 {
-    interface IController<TPrimaryKeyType, TRequest, TResponse>
+    public interface IController<TPrimaryKeyType, TRequest, TResponse>
     {
         public Task<ActionResult<TResponse>> Get(
             TPrimaryKeyType id,

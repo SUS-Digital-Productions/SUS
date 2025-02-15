@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using SUS.Pagination.Base;
 
 namespace SUS.Core.Abstractions.Interfaces
 {
-    interface IGenericService<TResponse, TRequest, TPrimaryKeyType>
+    public interface IGenericService<TResponse, TRequest, TPrimaryKeyType>
     {
         public Task<PaginatedList<TResponse>> GetPageAsync(
             int page,

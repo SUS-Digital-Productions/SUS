@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.Pagination.Base", "SUS.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.Data.Repositories", "SUS.Data.Repositories\SUS.Data.Repositories.csproj", "{A2225638-F97A-4D41-984D-C13D043BCDDB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.Services", "SUS.Services\SUS.Services.csproj", "{5D5CC90D-7930-438C-BE0F-42C6E61F9768}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SUS.Web.Controllers", "SUS.Web.Controllers\SUS.Web.Controllers.csproj", "{87900948-6C8B-45FE-8655-CA3BB832A60A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{A2225638-F97A-4D41-984D-C13D043BCDDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A2225638-F97A-4D41-984D-C13D043BCDDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A2225638-F97A-4D41-984D-C13D043BCDDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D5CC90D-7930-438C-BE0F-42C6E61F9768}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D5CC90D-7930-438C-BE0F-42C6E61F9768}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D5CC90D-7930-438C-BE0F-42C6E61F9768}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D5CC90D-7930-438C-BE0F-42C6E61F9768}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87900948-6C8B-45FE-8655-CA3BB832A60A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87900948-6C8B-45FE-8655-CA3BB832A60A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87900948-6C8B-45FE-8655-CA3BB832A60A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87900948-6C8B-45FE-8655-CA3BB832A60A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

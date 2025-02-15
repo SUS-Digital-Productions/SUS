@@ -2,16 +2,14 @@
 
 	<PropertyGroup>
 		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-
+		<ImplicitUsings>enable</ImplicitUsings>
 		<Version>8.0.0</Version>
 		<Authors>Pasha</Authors>
 		<Company>SUS Digital Productions</Company>
-		<Product>Pagination Tools</Product>
-		<PackageTags>EntityFrameworkCore;Data;Pagination</PackageTags>
-		<Description>Open Source Pagination helper brought to you by SUS Digital Productions.</Description>
-
+		<Product>Services Implementations</Product>
+		<PackageTags>SUS;Services;Implementations;CrudServiceLayer</PackageTags>
+		<Description>Open Source Crud Service Layer Implementation Package brought to you by SUS Digital Productions.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 		<PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
 		<RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
@@ -19,8 +17,8 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
-		<PackageReference Include="SUS.Pagination.Base" Version="0.1.0" />
+	  <PackageReference Include="AutoMapper" Version="14.0.0" />
+	  <PackageReference Include="SUS.Data.Repositories" Version="8.0.1" />
 	</ItemGroup>
 
 </Project>
