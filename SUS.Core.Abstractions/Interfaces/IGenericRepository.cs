@@ -5,23 +5,23 @@ using SUS.Pagination.Base;
 
 namespace SUS.Core.Abstractions.Interfaces
 {
-    public interface IGenericRepository<TPrimaryKeyType, TType>
+    public interface IGenericRepository<TPrimaryKeyType, TEntity>
     {
-        public Task<PaginatedList<TType>> GetPageAsync(
+        public Task<PaginatedList<TEntity>> GetPageAsync(
             int page,
             int pageSize,
             CancellationToken cancellationToken
         );
 
-        public Task<IEnumerable<TType>> GetAllAsync(CancellationToken cancellationToken);
+        public Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken cancellationToken);
 
-        public Task<TType> GetAsync(TPrimaryKeyType key, CancellationToken cancellationToken);
+        public Task<TEntity> GetAsync(TPrimaryKeyType key, CancellationToken cancellationToken);
 
-        public Task<TType> AddAsync(TType entity, CancellationToken cancellationToken);
+        public Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken);
 
-        public Task<TType> UpdateAsync(
+        public Task<TEntity> UpdateAsync(
             TPrimaryKeyType key,
-            TType entity,
+            TEntity entity,
             CancellationToken cancellationToken
         );
 

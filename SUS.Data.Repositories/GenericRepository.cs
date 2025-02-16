@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using SUS.Core.Abstractions.Interfaces;
 using SUS.Data.Pagination;
 using SUS.Pagination.Base;
@@ -40,7 +35,7 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
         return await _dbSet.ToListAsync();
     }
 
-    public virtual async Task<TEntity?> GetAsync(
+    public virtual async Task<TEntity> GetAsync(
         TPrimaryKeyType key,
         CancellationToken cancellationToken
     )

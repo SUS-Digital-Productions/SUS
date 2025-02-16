@@ -5,7 +5,7 @@ using SUS.Pagination.Base;
 
 namespace SUS.Core.Abstractions.Interfaces
 {
-    public interface IGenericService<TResponse, TRequest, TPrimaryKeyType>
+    public interface IGenericService<TPrimaryKeyType, TRequest, TResponse>
     {
         public Task<PaginatedList<TResponse>> GetPageAsync(
             int page,

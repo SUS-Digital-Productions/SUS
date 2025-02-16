@@ -22,6 +22,6 @@ namespace SUS.Core.Abstractions.Interfaces
             CancellationToken cancellationToken
         );
 
-        public Task<IActionResult> Delete(TPrimaryKeyType id, CancellationToken token);
+        public Task<IActionResult> Delete(TPrimaryKeyType id, CancellationToken cancellationToken);
     }
 }

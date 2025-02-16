@@ -4,10 +4,10 @@ using SUS.Pagination.Base;
 
 namespace SUS.Services;
 
-public class GenericService<TPrimaryKeyType, TResponse, TRequest, TEntity>(
+public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
     IMapper mapper,
     IGenericRepository<TPrimaryKeyType, TEntity> repository
-) : IGenericService<TResponse, TRequest, TPrimaryKeyType>
+) : IGenericService<TPrimaryKeyType, TRequest, TResponse>
 {
     protected readonly IMapper _mapper = mapper;
     protected readonly IGenericRepository<TPrimaryKeyType, TEntity> _repository = repository;
