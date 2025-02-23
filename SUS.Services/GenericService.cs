@@ -14,7 +14,7 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
 
     public virtual async Task<TResponse> AddAsync(
         TRequest request,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var entity = _mapper.Map<TEntity>(request);
@@ -22,13 +22,28 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
         return _mapper.Map<TResponse>(result);
     }
 
-    public virtual async Task DeleteAsync(TPrimaryKeyType key, CancellationToken cancellationToken)
+    public virtual async Task<TResponse> AddOrGetAsync(
+        TPrimaryKeyType key,
+        TRequest request,
+        CancellationToken cancellationToken = default
+    )
+    {
+        var entity = await _repository.GetAsync(key, cancellationToken);
+        if (entity == null)
+            return await AddAsync(request, cancellationToken);
+        return _mapper.Map<TResponse>(entity);
+    }
+
+    public virtual async Task DeleteAsync(
+        TPrimaryKeyType key,
+        CancellationToken cancellationToken = default
+    )
     {
         await _repository.DeleteAsync(key, cancellationToken);
     }
 
     public virtual async Task<IEnumerable<TResponse>> GetAllAsync(
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var result = await _repository.GetAllAsync(cancellationToken);
@@ -37,7 +52,7 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
 
     public virtual async Task<TResponse> GetAsync(
         TPrimaryKeyType key,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var result = await _repository.GetAsync(key, cancellationToken);
@@ -47,7 +62,7 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
     public virtual async Task<PaginatedList<TResponse>> GetPageAsync(
         int page,
         int pageSize,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var paginatedList = await _repository.GetPageAsync(page, pageSize, cancellationToken);
@@ -62,7 +77,7 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
     public virtual async Task<TResponse> UpdateAsync(
         TPrimaryKeyType key,
         TRequest request,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var entity = _mapper.Map<TEntity>(request);

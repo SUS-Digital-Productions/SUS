@@ -8,20 +8,23 @@ namespace SUS.Core.Abstractions.Interfaces
     {
         public Task<ActionResult<TResponse>> Get(
             TPrimaryKeyType id,
-            CancellationToken cancellationToken
+            CancellationToken cancellationToken = default
         );
 
         public Task<ActionResult<TResponse>> Post(
             [FromBody] TRequest request,
-            CancellationToken cancellationToken
+            CancellationToken cancellationToken = default
         );
 
         public Task<ActionResult<TResponse>> Put(
             TPrimaryKeyType id,
             [FromBody] TRequest request,
-            CancellationToken cancellationToken
+            CancellationToken cancellationToken = default
         );
 
-        public Task<IActionResult> Delete(TPrimaryKeyType id, CancellationToken cancellationToken);
+        public Task<IActionResult> Delete(
+            TPrimaryKeyType id,
+            CancellationToken cancellationToken = default
+        );
     }
 }

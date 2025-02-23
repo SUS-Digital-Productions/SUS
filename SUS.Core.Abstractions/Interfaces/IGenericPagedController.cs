@@ -11,7 +11,7 @@ namespace SUS.Core.Abstractions.Interfaces
         public Task<ActionResult<PaginatedList<TResponse>>> GetPage(
             [FromQuery] int page,
             [FromQuery] int size,
-            CancellationToken cancellationToken
+            CancellationToken cancellationToken = default
         );
     }
 }

@@ -13,14 +13,20 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
     protected readonly DbSet<TEntity> _dbSet = context.Set<TEntity>();
     protected readonly TDatabaseContext _context = context;
 
-    public virtual async Task<TEntity> AddAsync(TEntity entity, CancellationToken cancellationToken)
+    public virtual async Task<TEntity> AddAsync(
+        TEntity entity,
+        CancellationToken cancellationToken = default
+    )
     {
         var resultingEntity = await _dbSet.AddAsync(entity, cancellationToken);
         await _context.SaveChangesAsync(cancellationToken);
         return resultingEntity.Entity;
     }
 
-    public virtual async Task DeleteAsync(TPrimaryKeyType key, CancellationToken cancellationToken)
+    public virtual async Task DeleteAsync(
+        TPrimaryKeyType key,
+        CancellationToken cancellationToken = default
+    )
     {
         var entity = await _dbSet.FindAsync(key, cancellationToken);
         if (entity != null)
@@ -30,14 +36,16 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
         }
     }
 
-    public virtual async Task<IEnumerable<TEntity>> GetAllAsync(CancellationToken cancellationToken)
+    public virtual async Task<IEnumerable<TEntity>> GetAllAsync(
+        CancellationToken cancellationToken = default
+    )
     {
         return await _dbSet.ToListAsync();
     }
 
     public virtual async Task<TEntity> GetAsync(
         TPrimaryKeyType key,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         return await _dbSet.FindAsync(key, cancellationToken);
@@ -46,7 +54,7 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
     public virtual async Task<PaginatedList<TEntity>> GetPageAsync(
         int page,
         int pageSize,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         return await _dbSet.PageAsync(page, pageSize);
@@ -55,7 +63,7 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
     public virtual async Task<TEntity> UpdateAsync(
         TPrimaryKeyType key,
         TEntity entity,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         var entityToUpdate = await _dbSet.FindAsync(key, cancellationToken);

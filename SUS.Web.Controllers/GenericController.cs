@@ -15,11 +15,14 @@ public class GenericController<TPrimaryKeyType, TRequest, TResponse>(
         logger;
 
     [HttpDelete("{id}")]
-    public virtual async Task<IActionResult> Delete(TPrimaryKeyType id, CancellationToken token)
+    public virtual async Task<IActionResult> Delete(
+        TPrimaryKeyType id,
+        CancellationToken cancellationToken = default
+    )
     {
         try
         {
-            await _service.DeleteAsync(id, token);
+            await _service.DeleteAsync(id, cancellationToken);
             return Ok();
         }
         catch (Exception ex)
@@ -31,7 +34,7 @@ public class GenericController<TPrimaryKeyType, TRequest, TResponse>(
 
     [HttpGet]
     public virtual async Task<ActionResult<IEnumerable<TResponse>>> Get(
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         try
@@ -48,7 +51,7 @@ public class GenericController<TPrimaryKeyType, TRequest, TResponse>(
     [HttpGet("{id}")]
     public virtual async Task<ActionResult<TResponse>> Get(
         TPrimaryKeyType id,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         try
@@ -65,7 +68,7 @@ public class GenericController<TPrimaryKeyType, TRequest, TResponse>(
     [HttpPost]
     public virtual async Task<ActionResult<TResponse>> Post(
         [FromBody] TRequest request,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         try
@@ -83,7 +86,7 @@ public class GenericController<TPrimaryKeyType, TRequest, TResponse>(
     public virtual async Task<ActionResult<TResponse>> Put(
         TPrimaryKeyType id,
         [FromBody] TRequest request,
-        CancellationToken cancellationToken
+        CancellationToken cancellationToken = default
     )
     {
         try
