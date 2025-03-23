@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>8.0.6</Version>
+		<Version>8.0.7</Version>
 		<Authors>Pasha</Authors>
 		<Company>SUS Digital Productions</Company>
 		<Product>Repository Implementations</Product>
@@ -19,7 +19,7 @@
 
 	<ItemGroup>
 		<PackageReference Include="SUS.Core.Abstractions" Version="0.1.7" />
-		<PackageReference Include="SUS.Data.Pagination" Version="8.0.0" />
+		<PackageReference Include="SUS.Data.Pagination" Version="8.0.2" />
 	</ItemGroup>
 
 </Project>

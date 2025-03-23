@@ -4,7 +4,7 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>8.0.3</Version>
+		<Version>8.0.4</Version>
 		<Authors>Pasha</Authors>
 		<Company>SUS Digital Productions</Company>
 		<Product>Web Controllers Implementations</Product>
@@ -17,7 +17,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-	  <PackageReference Include="SUS.Services" Version="8.0.3" />
+	  <PackageReference Include="SUS.Services" Version="8.0.4" />
 	</ItemGroup>
 
 </Project>
