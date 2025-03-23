@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 
-		<Version>8.0.0</Version>
+		<Version>8.0.1</Version>
 		<Authors>Pasha</Authors>
 		<Company>SUS Digital Productions</Company>
 		<Product>Pagination Tools</Product>
@@ -19,6 +19,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+		<PackageReference Include="AutoMapper" Version="14.0.0" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.13" />
 		<PackageReference Include="SUS.Pagination.Base" Version="0.1.0" />
 	</ItemGroup>

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using SUS.Pagination.Base;
 
 namespace SUS.Data.Pagination;
@@ -37,5 +38,20 @@ public static class PaginationExtensions
         var count = enumerable.Count();
         var items = enumerable.Skip((page - 1) * size).Take(size).ToList();
         return Task.FromResult(new PaginatedList<TType>(items, count, page, size));
+    }
+
+    public static Task<PaginatedList<DestType>> Map<SrcType, DestType>(
+        this PaginatedList<SrcType> source,
+        IMapper mapper
+    )
+    {
+        return Task.FromResult(
+            new PaginatedList<DestType>(
+                mapper.Map<List<DestType>>(source.Items),
+                source.TotalCount,
+                source.PageNumber,
+                source.PageSize
+            )
+        );
     }
 }
