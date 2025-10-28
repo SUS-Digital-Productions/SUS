@@ -51,15 +51,14 @@ public class GenericPagedController<TPrimaryKeyType, TRequest, TResponse>(
     }
 
     [HttpGet]
-    public virtual async Task<ActionResult<PaginatedList<TResponse>>> GetPage(
-        [FromQuery] int page = 1,
-        [FromQuery] int size = 20,
+    public virtual async Task<ActionResult<Page<TResponse>>> GetPage(
+        [FromQuery] PageRequest pageRequest,
         CancellationToken cancellationToken = default
     )
     {
         try
         {
-            return Ok(await _service.GetPageAsync(page, size, cancellationToken));
+            return Ok(await _service.GetPageAsync(pageRequest, cancellationToken));
         }
         catch (Exception ex)
         {

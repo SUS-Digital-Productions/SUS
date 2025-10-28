@@ -17,6 +17,11 @@ public class GenericInMemoryRepository<TEntity> : IGenericRepository<int, TEntit
         return Task.FromResult(entity);
     }
 
+    public virtual IQueryable<TEntity> AsQueryable()
+    {
+        return _list.AsQueryable();
+    }
+
     public virtual Task DeleteAsync(int key, CancellationToken cancellationToken = default)
     {
         if (key >= 0 && key < _list.Count)
@@ -42,13 +47,21 @@ public class GenericInMemoryRepository<TEntity> : IGenericRepository<int, TEntit
         return null;
     }
 
-    public virtual Task<PaginatedList<TEntity>> GetPageAsync(
-        int page,
-        int pageSize,
+    public virtual Task<TEntity> GetOrAddAsync(
+        int key,
+        TEntity entity,
         CancellationToken cancellationToken = default
     )
     {
-        return _list.PageAsync(page, pageSize);
+        return GetAsync(key, cancellationToken) ?? AddAsync(entity, cancellationToken);
+    }
+
+    public virtual Task<Page<TEntity>> GetPageAsync(
+        PageRequest pageRequest,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return _list.PageAsync(pageRequest.Page, pageRequest.PageSize);
     }
 
     public virtual Task<TEntity> UpdateAsync(

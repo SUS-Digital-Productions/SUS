@@ -1,27 +1,22 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-
-		<Version>8.0.2</Version>
-		<Authors>Pasha</Authors>
-		<Company>SUS Digital Productions</Company>
-		<Product>Pagination Tools</Product>
-		<PackageTags>EntityFrameworkCore;Data;Pagination</PackageTags>
-		<Description>Open Source Pagination helper brought to you by SUS Digital Productions.</Description>
-
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="AutoMapper" Version="14.0.0" />
-		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.3" />
-		<PackageReference Include="SUS.Pagination.Base" Version="0.1.0" />
-	</ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Version>8.0.4</Version>
+    <Authors>Pasha</Authors>
+    <Company>SUS Digital Productions</Company>
+    <Product>Pagination Tools</Product>
+    <PackageTags>EntityFrameworkCore;Data;Pagination</PackageTags>
+    <Description>Open Source Pagination helper brought to you by SUS Digital Productions.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="15.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.21" />
+    <PackageReference Include="SUS.Pagination.Base" Version="0.1.1" />
+  </ItemGroup>
 </Project>

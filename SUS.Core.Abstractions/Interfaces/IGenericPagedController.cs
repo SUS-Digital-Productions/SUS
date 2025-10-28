@@ -8,9 +8,8 @@ namespace SUS.Core.Abstractions.Interfaces
     public interface IGenericPagedController<TPrimaryKeyType, TRequest, TResponse>
         : IController<TPrimaryKeyType, TRequest, TResponse>
     {
-        public Task<ActionResult<PaginatedList<TResponse>>> GetPage(
-            [FromQuery] int page,
-            [FromQuery] int size,
+        public Task<ActionResult<Page<TResponse>>> GetPage(
+            [FromQuery] PageRequest pageRequest,
             CancellationToken cancellationToken = default
         );
     }

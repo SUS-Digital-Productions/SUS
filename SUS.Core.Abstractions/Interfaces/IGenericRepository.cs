@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 using SUS.Pagination.Base;
@@ -7,9 +8,8 @@ namespace SUS.Core.Abstractions.Interfaces
 {
     public interface IGenericRepository<TPrimaryKeyType, TEntity>
     {
-        public Task<PaginatedList<TEntity>> GetPageAsync(
-            int page,
-            int pageSize,
+        public Task<Page<TEntity>> GetPageAsync(
+            PageRequest pageRequest,
             CancellationToken cancellationToken = default
         );
 
@@ -34,5 +34,13 @@ namespace SUS.Core.Abstractions.Interfaces
         );
 
         public Task DeleteAsync(TPrimaryKeyType key, CancellationToken cancellationToken = default);
+
+        public IQueryable<TEntity> AsQueryable();
+
+        public Task<TEntity> GetOrAddAsync(
+            TPrimaryKeyType key,
+            TEntity entity,
+            CancellationToken cancellationToken = default
+        );
     }
 }

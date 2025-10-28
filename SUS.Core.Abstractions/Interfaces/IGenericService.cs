@@ -7,9 +7,8 @@ namespace SUS.Core.Abstractions.Interfaces
 {
     public interface IGenericService<TPrimaryKeyType, TRequest, TResponse>
     {
-        public Task<PaginatedList<TResponse>> GetPageAsync(
-            int page,
-            int pageSize,
+        public Task<Page<TResponse>> GetPageAsync(
+            PageRequest pageRequest,
             CancellationToken cancellationToken = default
         );
 

@@ -59,14 +59,13 @@ public class GenericService<TPrimaryKeyType, TRequest, TResponse, TEntity>(
         return _mapper.Map<TResponse>(result);
     }
 
-    public virtual async Task<PaginatedList<TResponse>> GetPageAsync(
-        int page,
-        int pageSize,
+    public virtual async Task<Page<TResponse>> GetPageAsync(
+        PageRequest pageRequest,
         CancellationToken cancellationToken = default
     )
     {
-        var paginatedList = await _repository.GetPageAsync(page, pageSize, cancellationToken);
-        return new PaginatedList<TResponse>(
+        var paginatedList = await _repository.GetPageAsync(pageRequest, cancellationToken);
+        return new Page<TResponse>(
             _mapper.Map<List<TResponse>>(paginatedList.Items),
             paginatedList.TotalCount,
             paginatedList.PageNumber,

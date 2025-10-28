@@ -23,6 +23,11 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
         return resultingEntity.Entity;
     }
 
+    public virtual IQueryable<TEntity> AsQueryable()
+    {
+        return _dbSet.AsQueryable();
+    }
+
     public virtual async Task DeleteAsync(
         TPrimaryKeyType key,
         CancellationToken cancellationToken = default
@@ -51,13 +56,21 @@ public class GenericRepository<TPrimaryKeyType, TEntity, TDatabaseContext>(TData
         return await _dbSet.FindAsync(key, cancellationToken);
     }
 
-    public virtual async Task<PaginatedList<TEntity>> GetPageAsync(
-        int page,
-        int pageSize,
+    public virtual Task<TEntity> GetOrAddAsync(
+        TPrimaryKeyType key,
+        TEntity entity,
         CancellationToken cancellationToken = default
     )
     {
-        return await _dbSet.PageAsync(page, pageSize);
+        return GetAsync(key, cancellationToken) ?? AddAsync(entity, cancellationToken);
+    }
+
+    public virtual async Task<Page<TEntity>> GetPageAsync(
+        PageRequest pageRequest,
+        CancellationToken cancellationToken = default
+    )
+    {
+        return await _dbSet.PageAsync(pageRequest.Page, pageRequest.PageSize);
     }
 
     public virtual async Task<TEntity> UpdateAsync(

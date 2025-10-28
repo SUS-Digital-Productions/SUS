@@ -1,25 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-	<PropertyGroup>
-		<TargetFramework>net8.0</TargetFramework>
-		<Nullable>enable</Nullable>
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>8.0.7</Version>
-		<Authors>Pasha</Authors>
-		<Company>SUS Digital Productions</Company>
-		<Product>Repository Implementations</Product>
-		<PackageTags>SUS;Repositories;Implementations;EntityFrameworkCore</PackageTags>
-		<Description>Open Source Repository Implementation Package brought to you by SUS Digital Productions.</Description>
-
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
-		<RepositoryType>git</RepositoryType>
-	</PropertyGroup>
-
-	<ItemGroup>
-		<PackageReference Include="SUS.Core.Abstractions" Version="0.1.7" />
-		<PackageReference Include="SUS.Data.Pagination" Version="8.0.2" />
-	</ItemGroup>
-
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Version>8.0.10</Version>
+    <Authors>Pasha</Authors>
+    <Company>SUS Digital Productions</Company>
+    <Product>Repository Implementations</Product>
+    <PackageTags>SUS;Repositories;Implementations;EntityFrameworkCore</PackageTags>
+    <Description>Open Source Repository Implementation Package brought to you by SUS Digital Productions.</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/SUS-Digital-Productions/SUS</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/SUS-Digital-Productions/SUS</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="SUS.Core.Abstractions" Version="0.2.2" />
+    <PackageReference Include="SUS.Data.Pagination" Version="8.0.4" />
+  </ItemGroup>
 </Project>

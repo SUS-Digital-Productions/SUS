@@ -6,7 +6,7 @@ namespace SUS.Data.Pagination;
 
 public static class PaginationExtensions
 {
-    public static async Task<PaginatedList<TType>> PageAsync<TType>(
+    public static async Task<Page<TType>> PageAsync<TType>(
         this IQueryable<TType> source,
         int page,
         int size
@@ -14,10 +14,10 @@ public static class PaginationExtensions
     {
         var count = await source.CountAsync();
         var items = await source.Skip((page - 1) * size).Take(size).ToListAsync();
-        return new PaginatedList<TType>(items, count, page, size);
+        return new Page<TType>(items, count, page, size);
     }
 
-    public static async Task<PaginatedList<TType>> PageAsync<TType>(
+    public static async Task<Page<TType>> PageAsync<TType>(
         this DbSet<TType> set,
         int page,
         int size
@@ -26,10 +26,10 @@ public static class PaginationExtensions
     {
         var count = await set.CountAsync();
         var items = await set.Skip((page - 1) * size).Take(size).ToListAsync();
-        return new PaginatedList<TType>(items, count, page, size);
+        return new Page<TType>(items, count, page, size);
     }
 
-    public static Task<PaginatedList<TType>> PageAsync<TType>(
+    public static Task<Page<TType>> PageAsync<TType>(
         this IEnumerable<TType> enumerable,
         int page,
         int size
@@ -37,16 +37,16 @@ public static class PaginationExtensions
     {
         var count = enumerable.Count();
         var items = enumerable.Skip((page - 1) * size).Take(size).ToList();
-        return Task.FromResult(new PaginatedList<TType>(items, count, page, size));
+        return Task.FromResult(new Page<TType>(items, count, page, size));
     }
 
-    public static Task<PaginatedList<DestType>> Map<SrcType, DestType>(
-        this PaginatedList<SrcType> source,
+    public static Task<Page<DestType>> Map<SrcType, DestType>(
+        this Page<SrcType> source,
         IMapper mapper
     )
     {
         return Task.FromResult(
-            new PaginatedList<DestType>(
+            new Page<DestType>(
                 mapper.Map<List<DestType>>(source.Items),
                 source.TotalCount,
                 source.PageNumber,
