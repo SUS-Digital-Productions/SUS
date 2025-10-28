@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <Version>8.0.10</Version>
+    <Version>10.0.0</Version>
     <Authors>Pasha</Authors>
     <Company>SUS Digital Productions</Company>
     <Product>Repository Implementations</Product>
@@ -16,6 +16,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="SUS.Core.Abstractions" Version="0.2.2" />
-    <PackageReference Include="SUS.Data.Pagination" Version="8.0.4" />
+    <PackageReference Include="SUS.Data.Pagination" Version="10.0.1" />
   </ItemGroup>
 </Project>
